@@ -1,7 +1,17 @@
 %h1=@product.name
 %p
-  %strong Description
+  %strong Description:
   =@product.description
 %p
-  %strong Price
+  %strong Price:
   =@product.price
+%p
+  %strong Created:
+  =@product.created_at
+%p
+  %strong Updated:
+  =@product.updated_at
+
+=link_to "Edit", edit_product_path(@product)
+|
+=link_to "All Products", root_path

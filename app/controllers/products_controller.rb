@@ -12,10 +12,23 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.save
-    redirect_to @product
+    redirect_to @product, notice: 'Product was created successfully'
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @product.update(product_params)
+    redirect_to @product, notice: 'Product was updated successfully'
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to root_path, notice: 'Product was deleted'
   end
 
   private
